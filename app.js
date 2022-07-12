@@ -1,11 +1,15 @@
 "use strict"
 
-const express = require("express")
+const express = require('express')
+const cors = require('cors')
+
 const app = express()
 const config = require("./config.json")
 
+app.use(cors())
+
 var environment = process.env.NODE_ENV
-var isDevelopment = environment === 'development'
+var isProduction = environment === 'production'
 
 const api = require('./routes/api')
 
@@ -17,7 +21,7 @@ app.use('/api', api)
 
 app.use(express.static("public"))
 
-if ( isDevelopment )
+if ( !isProduction )
     app.listen(config.srv.dev_port, (err) => {
         if (err) {
             console.error(err)
