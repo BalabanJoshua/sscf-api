@@ -1,0 +1,10 @@
+{
+    "name": "School Name Student Council",
+    "school_name": "School Name",
+    "name_abrv": "SNSC",
+    "school_name_abrv": "SN",
+    "srv": {
+        "dev_port": 3000,
+        "version": "0.0.1"
+    }
+}
